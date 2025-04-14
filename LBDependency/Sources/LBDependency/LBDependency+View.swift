@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension View {
+public extension View {
     func dependency<DependencyType: Sendable>(_ keyPath: WritableKeyPath<LBDependencyValues, DependencyType>, value: DependencyType) -> some View {
         Container.shared[keyPath] = value
         return self

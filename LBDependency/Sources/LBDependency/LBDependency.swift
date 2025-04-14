@@ -4,12 +4,12 @@
 import SwiftUI
 
 @propertyWrapper @MainActor
-public struct Dependency<DependencyType>: DynamicProperty {
+public struct LBDependency<DependencyType>: DynamicProperty {
     @ObservedObject private var container = Container.shared
 
     private let keyPath: KeyPath<LBDependencyValues, DependencyType>
 
-    init(_ keyPath: KeyPath<LBDependencyValues, DependencyType>) {
+    public init(_ keyPath: KeyPath<LBDependencyValues, DependencyType>) {
         self.keyPath = keyPath
     }
 
